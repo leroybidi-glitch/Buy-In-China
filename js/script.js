@@ -29,6 +29,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.innerHTML = text;
             }
         });
+        
+        // Handle RTL for Arabic
+        const html = document.documentElement;
+        if (lang === 'ar') {
+            html.setAttribute('dir', 'rtl');
+            html.setAttribute('lang', 'ar');
+        } else {
+            html.setAttribute('dir', 'ltr');
+            html.setAttribute('lang', lang);
+        }
     }
 
     // ================================
@@ -369,4 +379,3 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%c📱 Contact: +237 698942993 | +86 17539192966', 
         'color: #FFD700; font-size: 12px;');
 });
-
