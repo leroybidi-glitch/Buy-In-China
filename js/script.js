@@ -29,7 +29,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.innerHTML = text;
             }
         });
-        
+
+         // Handle RTL for Arabic
+        const html = document.documentElement;
+        if (lang === 'ar') {
+            html.setAttribute('dir', 'rtl');
+            html.setAttribute('lang', 'ar');
+        } else {
+            html.setAttribute('dir', 'ltr');
+            html.setAttribute('lang', lang);
+        }
+    }
+    
        // ================================
     // MOBILE MENU TOGGLE
     // ================================
