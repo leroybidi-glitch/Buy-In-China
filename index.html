@@ -10,11 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <button class="lang-btn active" data-lang="fr">🇫🇷 FR</button>
-        <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
-    </div>
+     <!-- Menu Overlay -->
+    <div class="menu-overlay"></div>
+    
+    <!-- Navigation Menu -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/logo.png" alt="BUY IN CHINA">
+                <span>BUY IN CHINA</span>
+            </div>
+            
+            <button class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="#hero">
+                    <i class="fas fa-home"></i>
+                    <span data-fr="Accueil" data-en="Home">Accueil</span>
+                </a></li>
+                <li><a href="#introduction">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-fr="À Propos" data-en="About">À Propos</span>
+                </a></li>
+                <li><a href="#services">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span data-fr="Services" data-en="Services">Services</span>
+                </a></li>
+                <li><a href="#products">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span data-fr="Produits" data-en="Products">Produits</span>
+                </a></li>
+                <li><a href="#formation">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span data-fr="Formation" data-en="Training">Formation</span>
+                </a></li>
+                <li><a href="#process">
+                    <i class="fas fa-tasks"></i>
+                    <span data-fr="Processus" data-en="Process">Processus</span>
+                </a></li>
+                <li><a href="#faq">
+                    <i class="fas fa-question-circle"></i>
+                    <span data-fr="FAQ" data-en="FAQ">FAQ</span>
+                </a></li>
+                <li><a href="#contact" class="nav-cta">
+                    <i class="fas fa-envelope"></i>
+                    <span data-fr="Contact" data-en="Contact">Contact</span>
+                </a></li>
+            </ul>
+            
+            <!-- Language Switcher in Nav -->
+            <div class="nav-language-switcher">
+                <button class="lang-btn active" data-lang="fr">🇫🇷</button>
+                <button class="lang-btn" data-lang="en">🇬🇧</button>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
