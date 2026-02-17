@@ -13,9 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 switchLanguage(lang);
                 currentLang = lang;
                 
-                // Update active button
-                langButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
+                // Update ALL language buttons (both in nav and old switcher)
+                document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll(`.lang-btn[data-lang="${lang}"]`).forEach(b => b.classList.add('active'));
             }
         });
     });
