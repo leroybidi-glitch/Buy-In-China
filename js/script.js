@@ -30,16 +30,67 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
-        // Handle RTL for Arabic
-        const html = document.documentElement;
-        if (lang === 'ar') {
-            html.setAttribute('dir', 'rtl');
-            html.setAttribute('lang', 'ar');
-        } else {
-            html.setAttribute('dir', 'ltr');
-            html.setAttribute('lang', lang);
-        }
+       // ================================
+    // MOBILE MENU TOGGLE
+    // ================================
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    const menuOverlay = document.querySelector('.menu-overlay');
+
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            const icon = this.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden';
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close mobile menu when clicking on a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                const icon = mobileMenuToggle.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Close mobile menu when clicking on overlay
+        menuOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            const icon = mobileMenuToggle.querySelector('i');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+            document.body.style.overflow = '';
+        });
+
+        // Close mobile menu when clicking outside (removed duplicate code)
     }
+
+    // ================================
+    // NAVIGATION SCROLL EFFECT
+    // ================================
+    const mainNav = document.querySelector('.main-nav');
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            mainNav.classList.add('scrolled');
+        } else {
+            mainNav.classList.remove('scrolled');
+        }
+    });
 
     // ================================
     // FAQ ACCORDION
